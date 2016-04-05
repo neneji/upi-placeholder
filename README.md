@@ -1,15 +1,8 @@
 # upi-placeholder
 
-Generate a user profile image by using initials of user name
+Generate a user profile image placeholder by using initials of user name
 
 ## Getting Started
-### On the server
-Install the module with: `npm install upi-placeholder`
-
-```javascript
-var upi_placeholder = require('upi-placeholder');
-upi_placeholder.awesome(); // "awesome"
-```
 
 ### In the browser
 Download the [production version][min] or the [development version][max].
@@ -19,38 +12,39 @@ Download the [production version][min] or the [development version][max].
 
 In your web page:
 
-```html
-<script src="dist/upi-placeholder.min.js"></script>
-<script>
-awesome(); // "awesome"
-</script>
-```
-
-In your code, you can attach upi-placeholder's methods to any object.
+include the lib in your page.
 
 ```html
-<script>
-var exports = Bocoup.utils;
-</script>
 <script src="dist/upi-placeholder.min.js"></script>
-<script>
-Bocoup.utils.awesome(); // "awesome"
-</script>
 ```
+
+then call
+```js
+upi.generateProfileImage(userName, options);
+```
+to generate the user profile image when the page is ready.
 
 ## Documentation
-_(Coming soon)_
+available options:
+* **fontCOlor**: color of text, default is white
+* **fontFamily**: font family, default is 'sans-serif'
+* **size**: the size of generated image, the font size is 60% of the size
+* **backgroundColor**: background color of the image, default is a random color
 
 ## Examples
-_(Coming soon)_
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-_Also, please don't edit files in the "dist" subdirectory as they are generated via Grunt. You'll find source code in the "lib" subdirectory!_
-
-## Release History
-_(Nothing yet)_
+```html
+<script src="dist/upi-placeholder.min.js"></script>
+<script>
+var image = new Image();
+var userName = 'Mario Rossi',
+    options = {
+        'fontColor': '#123456' // text color, default is #ffffff
+        'backgroundColor': '#654321', // background color, default is a random color
+        'size': 100, // result image size
+    };
+image.src = upi.generateProfileImage(userName, options);
+</script>
+```
 
 ## License
 Copyright (c) 2016 neneji  
