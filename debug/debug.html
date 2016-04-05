@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upi debug</title>
+    <script src="../lib/upi-placeholder.js"></script>
+    <style>
+        #imageContainer {
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        #imageContainer img {
+            min-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+
+        #upiExample {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;;
+            background: mediumpurple;
+        }
+
+        #upiExample span {
+            font-size: 75px;
+            font-family: Arial;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="upiExample">
+    <span>AB</span>
+</div>
+
+<div id="imageContainer">
+</div>
+<script>
+    var img = new Image(),
+            imgOptions = {
+//                backgroundColor: '#214',
+                size: 100
+            };
+    img.src = upi.generateProfileImage('a b', imgOptions);
+
+    var imgContainer = document.getElementById('imageContainer');
+
+    imgContainer.appendChild(img);
+</script>
+</body>
+</html>
